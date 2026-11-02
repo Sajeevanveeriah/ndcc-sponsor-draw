@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drink Card Draw | NDCC Dinos</title>
+<meta name="description" content="Weekly player sponsor drink card draw for Newcomb & District Cricket Club.">
+<link rel="icon" href="logos/ndcc.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <img src="logos/ndcc.jpg" alt="NDCC logo">
+  <div><h1>Player Sponsor Drink Card Draw</h1><p>Newcomb &amp; District Cricket Club · Season 2026/27</p></div>
+</div></header>
+
+<main class="wrap">
+  <section class="card wheel-card">
+    <div class="week">
+      <label for="wk">Round</label>
+      <select id="wk"></select>
+      <label for="dt">Date</label>
+      <input type="date" id="dt">
+    </div>
+    <div class="wheel-box">
+      <canvas id="wheel" width="1120" height="1120" role="img" aria-label="Sponsor wheel"></canvas>
+      <div class="pointer"></div>
+      <div class="hub"><img src="logos/ndcc.jpg" alt=""></div>
+    </div>
+    <button class="spin" id="spin" type="button">SPIN</button>
+  </section>
+
+  <aside class="side">
+    <section class="card pending" id="pending" hidden>
+      <h2>Not saved yet</h2>
+      <p id="pendingText"></p>
+      <div class="pending-acts">
+        <button type="button" class="save" id="saveGit">Copy and open GitHub</button>
+        <button type="button" class="again" id="discard">Discard</button>
+      </div>
+      <p class="hint">Paste over the contents of <code>winners.json</code> and commit. The site updates within a few minutes.</p>
+    </section>
+    <section class="card">
+      <h2>Entries <span class="count" id="count"></span></h2>
+      <label class="toggle"><input type="checkbox" id="skipWon" checked> Leave out sponsors who have already won this season</label>
+      <div class="entries" id="entries"></div>
+    </section>
+    <section class="card">
+      <h2>Winners this season</h2>
+      <table><thead><tr><th>Round</th><th>Date</th><th>Sponsor</th><th>Player</th></tr></thead><tbody id="hist"></tbody></table>
+    </section>
+  </aside>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="wName"><div class="win">
+  <div class="top">DRINK CARD WINNER</div>
+  <img id="wLogo" alt="">
+  <h3 id="wName"></h3>
+  <p id="wFor"></p>
+  <div class="acts"><button type="button" class="again" id="redraw">Re-draw</button><button type="button" class="save" id="confirm">Confirm winner</button></div>
+</div></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
