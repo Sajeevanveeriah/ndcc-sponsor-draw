@@ -25,3 +25,7 @@ Add new logo files to `logos/`. Sponsor details and logos come from https://www.
 ## Hosting
 
 GitHub Pages, deployed from the `main` branch root. There is no build step.
+
+## Project handoff
+
+Read the [project handoff](HANDOFF.md) for current work, checks and the next step.
